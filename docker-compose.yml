@@ -18,5 +18,7 @@ services:
     environment:
       - CMD_DB_URL=postgres://codimd:codimd_password@postgres/codimd
       - CMD_USECDN=false
+      - CMD_AUTO_VERSION_CHECK=false
+      - CMD_DOMAIN=${CMD_DOMAIN}
     depends_on:
       - postgres
