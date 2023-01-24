@@ -1,6 +1,6 @@
 services:
   postgres:
-    image: postgres:14
+    image: postgres:11.6
     restart: always
     volumes:
       - "./volumes/postgres_data:/var/lib/postgresql/data"
