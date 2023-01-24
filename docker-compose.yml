@@ -21,5 +21,6 @@ services:
       - CMD_AUTO_VERSION_CHECK=false
       - CMD_ALLOW_EMAIL_REGISTER=false
       - CMD_DOMAIN=${CMD_DOMAIN}
+      - CMD_PROTOCOL_USESSL=${CMD_PROTOCOL_USESSL}
     depends_on:
       - postgres
