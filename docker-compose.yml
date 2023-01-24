@@ -1,0 +1,22 @@
+services:
+  postgres:
+    image: postgres:14
+    restart: always
+    volumes:
+      - "./volumes/postgres_data:/var/lib/postgresql/data"
+    environment:
+      - POSTGRES_USER=codimd
+      - POSTGRES_PASSWORD=codimd_password
+      - POSTGRES_DB=codimd
+  codimd:
+    image: hackmdio/hackmd:2.4.2
+    restart: always
+    volumes:
+      - ./volumes/codimd_uploads:/home/hackmd/app/public/uploads
+    ports:
+      - "${HOST_PORT}:3000"
+    environment:
+      - CMD_DB_URL=postgres://codimd:codimd_password@postgres/codimd
+      - CMD_USECDN=false
+    depends_on:
+      - postgres
