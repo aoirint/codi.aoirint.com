@@ -1,7 +1,6 @@
 # codi.aoirint.com
 
 - <https://hackmd.io/c/codimd-documentation/%2Fs%2Fcodimd-docker-deployment>
-- ``: UID:GID=1500:1500
 
 ```shell
 mkdir -p ./volumes/codimd_uploads
